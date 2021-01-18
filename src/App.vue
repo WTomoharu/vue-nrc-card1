@@ -9,8 +9,10 @@
         @click.stop="drawer = !drawer"
       />
 
-      <v-toolbar-title>
-        N HighSchool Railway Club
+      <v-toolbar-title
+        @click="$route.path !== '/' ? $router.push('/') : null"
+      >
+        N Railway Club Demo Site
       </v-toolbar-title>
     </v-app-bar>
 
