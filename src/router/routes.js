@@ -7,6 +7,10 @@ const routes = [
     path: '/blog-list',
     name: 'BlogList',
   },
+  {
+    path: '/blog-page',
+    name: 'BlogPage',
+  },
 ]
 
 export default routes
