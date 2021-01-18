@@ -3,6 +3,7 @@
     class="mx-auto"
     :elevation="8"
     max-width="400"
+    @click="$emit('click', $event)"
   >
     <v-img
       class="white--text align-end"

@@ -3,7 +3,7 @@
     <v-container class="grey lighten-5">
       <v-row v-for="n in 5" :key="n">
         <v-col>
-          <BlogCard />
+          <BlogCard @click="$router.push('/blog-page')" />
         </v-col>
       </v-row>
     </v-container>
