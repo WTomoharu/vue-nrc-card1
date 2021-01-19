@@ -1,20 +1,32 @@
 <template>
   <div class="blog-list-from-note">
-    <v-card
-      v-for="noteItem in noteItems"
-      :key="noteItem.id"
-      :elevation="8"
-      style="margin: 8px"
-    >
-    <div
-      v-html="noteItem.name"
-    ></div>
-    </v-card>
+    <v-container v-if="noteItems.length > 0" class="grey lighten-5">
+      <v-row v-for="noteItem in noteItems" :key="noteItem.id">
+        <v-col>
+          <BlogCard
+            :title="noteItem.name"
+            :subtitle="'サブタイトル'"
+            :category="noteItem.hashtags[0] ? noteItem.hashtags[0].hashtag.name : ''"
+            :src="noteItem.eyecatch"
+            @click="toLink(noteItem.noteUrl)"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+    <div v-else class="text-center" style="padding: 16px">
+      <v-progress-circular
+        class="mx-auto"
+        indeterminate
+        color="gray"
+        :size="50"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import BlogCard from '../components/BlogCard'
 
 async function timelog(fnc) {
   const start = Date.now()
@@ -25,7 +37,7 @@ async function timelog(fnc) {
 }
 
 async function getNote(userName) {
-  const urls = Array.from({length: 3}, (_, i) => {
+  const urls = Array.from({length: 1}, (_, i) => {
     return `https://note.com/api/v2/creators/${userName}/contents?kind=note&page=${i + 1}`
   })
 
@@ -39,6 +51,9 @@ async function getNote(userName) {
 }
 
 export default {
+  components: {
+    BlogCard
+  },
   data() {
     return {
       noteItems: []
@@ -49,5 +64,10 @@ export default {
       .then(items => { this.noteItems = items})
       .catch(err => { console.log(err) })
   },
+  methods: {
+    toLink(url) {
+      location.href = url
+    }
+  }
 }
 </script>
