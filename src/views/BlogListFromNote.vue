@@ -38,38 +38,6 @@ async function getNote(userName) {
   return contents
 }
 
-// async function getNote() {
-//   const contents = await getNoteList("info")
-//   const pages = await getNotePages(contents)
-//   return pages
-// }
-
-// async function getNotePages(contents) {
-//   const urls = contents.map(content => {
-//     return `https://note.com/api/v1/notes/${content.key}`
-//   })
-
-//   const baseUrl = "https://get-page.netlify.app/.netlify/functions/get-many"
-//   const reqUrl = `${baseUrl}?urls=${encodeURIComponent(urls.join(","))}`
-
-//   const pages = await axios.get(reqUrl).then(res => res.data)
-//   return pages
-// }
-
-// async function getNotePages(contents) {
-//   const array = []
-
-//   contents.map(content => {
-//     const url = `https://note.com/api/v1/notes/${content.key}`
-//     const baseUrl = "https://get-page.netlify.app/.netlify/functions/get-many"
-
-//     axios.get(`${baseUrl}?urls=${encodeURIComponent(url)}`)
-//       .then(res => { array.push(res.data[0]) })
-//   })
-
-//   return array
-// }
-
 export default {
   data() {
     return {
