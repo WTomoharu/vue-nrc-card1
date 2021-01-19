@@ -7,6 +7,7 @@
   >
     <v-img
       class="white--text align-end"
+      gradient="rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)"
       :src="src"
       :aspect-ratio="16/9"
     >
@@ -14,7 +15,7 @@
         <div class="body-1 red--text">
           {{ category }}
         </div>
-        <div class="text-h4" style="margin-left: -4px;">
+        <div class="text-h5" style="font-weight: 700;">
           {{ title }}
         </div>
         <div class="body-1">
