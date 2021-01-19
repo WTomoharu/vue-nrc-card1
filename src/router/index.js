@@ -14,7 +14,8 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.NODE_ENV === "development" ?
+    process.env.BASE_URL : 'vue-nrc-card1/',
   routes: routes.map(route => routeFormat(route))
 })
 
