@@ -7,20 +7,31 @@
   >
     <v-img
       class="white--text align-end"
-      :src="'https://cdn.vuetifyjs.com/images/cards/docks.jpg'"
+      :src="src"
       :aspect-ratio="16/9"
     >
       <v-card-text class="white--text">
         <div class="body-1 red--text">
-          カテゴリ
+          {{ category }}
         </div>
         <div class="text-h4" style="margin-left: -4px;">
-          タイトル
+          {{ title }}
         </div>
         <div class="body-1">
-          サブタイトル
+          {{ subtitle }}
         </div>
       </v-card-text>
     </v-img>
   </v-card>
 </template>
+
+<script>
+export default {
+  props: {
+    title: String,
+    subtitle: String,
+    category: String,
+    src: String
+  }
+}
+</script>
