@@ -4,6 +4,7 @@
       app
       color="primary"
       dark
+      clipped-left
     >
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
@@ -16,7 +17,7 @@
       </v-toolbar-title>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-model="drawer" app clipped>
       <v-list nav dense>
         <v-list-item-group>
           <v-list-item
