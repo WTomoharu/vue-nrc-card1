@@ -1,6 +1,6 @@
 <template>
   <div class="blog-list">
-    <v-container class="grey lighten-5">
+    <v-container>
       <v-row v-for="n in 5" :key="n">
         <v-col>
           <BlogCard

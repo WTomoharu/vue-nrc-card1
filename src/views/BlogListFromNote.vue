@@ -1,6 +1,6 @@
 <template>
   <div class="blog-list-from-note">
-    <v-container v-if="noteItems.length > 0" class="grey lighten-5">
+    <v-container v-if="noteItems.length > 0">
       <v-row v-for="noteItem in noteItems" :key="noteItem.id">
         <v-col>
           <BlogCard
