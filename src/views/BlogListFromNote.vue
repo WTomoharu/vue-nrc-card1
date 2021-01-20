@@ -17,7 +17,7 @@
       <v-progress-circular
         class="mx-auto"
         indeterminate
-        color="gray"
+        color="grey"
         :size="50"
       />
     </div>
