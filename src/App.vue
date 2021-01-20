@@ -17,7 +17,12 @@
       </v-toolbar-title>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app clipped>
+    <v-navigation-drawer
+      v-model="drawer"
+      mobile-breakpoint="960"
+      app
+      clipped
+    >
       <v-list nav dense>
         <v-list-item-group>
           <v-list-item
@@ -46,7 +51,7 @@ export default {
   name: 'App',
   data() {
     return {
-      drawer: false,
+      drawer: this.$vuetify.breakpoint.mdAndUp,
       routes
     }
   }
