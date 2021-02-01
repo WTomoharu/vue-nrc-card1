@@ -42,6 +42,7 @@
     <v-navigation-drawer
       v-model="drawer2"
       mobile-breakpoint="960"
+      class="text-center"
       color="rgba(200, 200, 200, 0.4)"
       app
       bottom
@@ -49,6 +50,19 @@
       overlay-opacity="0"
       style="backdrop-filter: blur(15px);"
     >
+      <v-btn
+        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+        @focus="e => e.currentTarget.blur()"
+        class="ma-2"
+        color="grey darken-3"
+        fab
+        small
+        dark
+        retain-focus-on-click
+      >
+        <v-icon>mdi-theme-light-dark</v-icon>
+      </v-btn>
+
       <v-list nav dense>
         <v-list-item-group>
           <v-list-item
