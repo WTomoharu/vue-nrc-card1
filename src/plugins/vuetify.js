@@ -8,9 +8,11 @@ export default new Vuetify({
     themes: {
       light: {
         "link-text": "#000000",
+        "drawer": "#f5f5f5"
       },
       dark: {
         "link-text": "#616161",
+        "drawer": "#212121"
       },
     }
   }

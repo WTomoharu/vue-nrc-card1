@@ -20,7 +20,7 @@
     <v-navigation-drawer
       v-model="drawer1"
       mobile-breakpoint="960"
-      class="grey lighten-4"
+      class="drawer"
       app
       clipped
     >
