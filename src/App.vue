@@ -42,11 +42,11 @@
     <v-navigation-drawer
       v-model="drawer2"
       mobile-breakpoint="960"
-      class="grey lighten-4"
+      color="rgba(200, 200, 200, 0.4)"
       app
       bottom
-      overlay-opacity="0.3"
-      style="opacity: 0.95;"
+      overlay-opacity="0"
+      style="backdrop-filter: blur(15px);"
     >
       <v-list nav dense>
         <v-list-item-group>
@@ -54,6 +54,7 @@
             v-for="route in routes"
             :key="route.path"
             :to="route.path"
+            style="background-color: rgba(255, 255, 255, 0.5);"
           >
             <v-list-item-title>
               {{ route.ja }}
@@ -64,7 +65,7 @@
     </v-navigation-drawer>
 
     <v-btn
-      v-if="!drawer2 && !$vuetify.breakpoint.mdAndUp"
+      v-if="!$vuetify.breakpoint.mdAndUp"
       @click="drawer2 = !drawer2"
       class="ma-2"
       color="primary"
