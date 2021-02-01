@@ -70,6 +70,8 @@
             :key="route.path"
             :to="route.path"
             style="background-color: rgba(255, 255, 255, 0.5);"
+            light
+            color="link-text"
           >
             <v-list-item-title>
               {{ route.ja }}
@@ -111,6 +113,7 @@ export default {
       drawer2: false,
       routes
     }
-  }
+  },
+  methods: {$log: console.log}
 }
 </script>
