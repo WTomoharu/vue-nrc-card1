@@ -24,19 +24,40 @@
       app
       clipped
     >
-      <v-list nav dense>
-        <v-list-item-group>
-          <v-list-item
-            v-for="route in routes"
-            :key="route.path"
-            :to="route.path"
-          >
-            <v-list-item-title>
-              {{ route.ja }}
+      <div
+        class="d-flex justify-space-between"
+        style="height: 100%; flex-flow: column;"
+      >
+        <v-list nav dense>
+          <v-list-item-group>
+            <v-list-item
+              v-for="route in routes"
+              :key="route.path"
+              :to="route.path"
+            >
+              <v-list-item-title>
+                {{ route.ja }}
+                </v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+
+        <v-list nav dense>
+          <v-list-item-group>
+            <v-list-item
+              v-model="$vuetify.theme.dark"
+            >
+              <v-list-item-icon>
+                <v-icon>mdi-theme-light-dark</v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-title>
+                Dark Mode
               </v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </div>
     </v-navigation-drawer>
 
     <v-navigation-drawer
