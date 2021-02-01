@@ -45,6 +45,7 @@
       color="rgba(200, 200, 200, 0.4)"
       app
       bottom
+      height="auto"
       overlay-opacity="0"
       style="backdrop-filter: blur(15px);"
     >
