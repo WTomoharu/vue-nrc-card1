@@ -61,6 +61,7 @@
     </v-navigation-drawer>
 
     <v-navigation-drawer
+      v-if="!$vuetify.breakpoint.mdAndUp"
       v-model="drawer2"
       mobile-breakpoint="960"
       class="text-center"
